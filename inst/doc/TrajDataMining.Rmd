@@ -1,0 +1,92 @@
+---
+title: "TrajDataMining"
+author: "Diego Monteiro"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{TrajDataMining}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## TrajDataMining
+
+A new method to detect a pattern called Partners in trajectories. This algorithm identifies pairs of trajecories whose objects saty together during certain
+periods. This method is avaliable in the TrajDataMining package. It differs
+from existing moving together patterns because its implementation is highly
+parallelizable and its clustering method is based on distance time series analysis.
+
+
+
+## Example data gives
+```{r}
+library(TrajDataMining)
+library(ggplot2)
+library(sp)
+library(magrittr)
+suppressMessages(library(rgdal))
+```
+
+## Plot of A1 data example
+
+### A1 track its a trajectory of sea elephant
+
+```{r ,fig.height=4,fig.width=4,fig.align='center'}
+
+  df <- data.frame(x=A1@sp@coords[,1],y=A1@sp@coords[,2])
+
+  ggplot(df,aes(x=df$x,y=df$y))+geom_path(aes(group = 1), arrow = arrow(),color='blue')+ggtitle("elephant sea Trajectory")+xlab("X")+ ylab("Y")+theme_classic()
+  
+```
+
+
+## Douglas Peucker Method
+
+#### Douglas-Peucker which reduces trajectories by preserving spatial precisions.
+
+```{r, fig.height=4,fig.width=4,fig.align='center'}
+
+# get the maximum distance
+ max <- max(A1@connections$distance)
+
+ douglasp <- douglasPeucker(A1,max)
+ 
+ df <- data.frame(x=douglasp@sp@coords[,1],y=douglasp@sp@coords[,2])
+ ggplot(df,aes(x=df$x,y=df$y))+geom_path(aes(group = 1), arrow = arrow(),color='blue')+ggtitle("Method Douglas Peucker")+xlab("X")+ ylab("Y")+theme_classic()
+ 
+```
+
+
+## Speed Filter
+
+#### A speed filter that filters out trajectory observations whose speeds are above a user-defined maximum velocity ( ETIENNE , 2011).
+
+```{r, fig.height=4,fig.width=4,fig.align='center'}
+
+# get the maximum distance
+  sf <- speedFilter(A1,0.01)
+  df <- data.frame(x=sf@sp@coords[,1],y=sf@sp@coords[,2])
+
+ ggplot(df,aes(x=df$x,y=df$y))+geom_path(aes(group = 1), arrow = arrow(),color='blue')+ggtitle("Method Speed Filter")+xlab("X")+ ylab("Y")+theme_classic()
+```
+
+## Partner
+
+#### A method, named Partner, that identifies objects that are moving together. We propose this method to recognize trajectories that stay together, based on trajectory distance time series analysis.
+
+#### For to send this data for the database use the class DataSourceInfo.
+```{r, fig.height=6,fig.width=6,fig.align='center'}
+ 
+  data <- FALSE
+  
+  partner(A1,A2,110792,2277,0,data)
+
+  
+
+```
+
+
+
+
+
+
