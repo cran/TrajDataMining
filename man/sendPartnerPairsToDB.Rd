@@ -23,12 +23,8 @@ sendPartnerPairsToDB(dataframe, dataSourceInfo, tablename)
 \item{tablename}{Name of table}
 }
 \value{
-send the partners list for a database
+Send the partners list for a database
 }
 \description{
 Method that sends found partners to a PostGIS database
-
-Method that sends found partners to a PostGIS database with object DataSourceInfo
-
-Method that sends found partners to a PostGIS database using object PosgreSQLConnection
 }

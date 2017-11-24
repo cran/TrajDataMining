@@ -1,7 +1,7 @@
 Package: TrajDataMining
 Type: Package
 Title: Trajectories Data Mining
-Version: 0.1.3
+Version: 0.1.4
 Authors@R: c(
   person("Diego","Monteiro",role=c("aut","cre"),email="dvm1607@gmail.com"),
   person("Karine", "Reis", role = "ctb",email="karine.ferreira@inpe.br"),
@@ -20,11 +20,11 @@ VignetteBuilder: knitr
 URL: https://github.com/INPEtrajectories/TrajDataMining
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2017-11-23 18:31:45 UTC; asainpe
+Packaged: 2017-11-24 18:27:04 UTC; asainpe
 Author: Diego Monteiro [aut, cre],
   Karine Reis [ctb],
   Carlos Alberto [ctb],
   Felipe Carvalho [ctb]
 Maintainer: Diego Monteiro <dvm1607@gmail.com>
 Repository: CRAN
-Date/Publication: 2017-11-23 18:51:24 UTC
+Date/Publication: 2017-11-24 23:23:28 UTC

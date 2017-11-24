@@ -14,7 +14,7 @@
 #'
 #'@author Diego Monteiro
 #'
-#'@return reduces trajectories by preserving spatial precisions
+#'@return Reduces trajectories by preserving spatial precisions
 #' 
 #'@rdname douglasPeucker
 #'
@@ -43,13 +43,13 @@ setGeneric(
 #'
 #' Method that reduces a trajectory spatially with first point and last point
 #'
-#' @param A1 track object
+#' @param A1 Represents a single trajectory followed by a person, animal or object
 #' 
-#' @param dist distance
+#' @param dist Distance time series
 #'
-#' @param firstp given first point
+#' @param firstp Given first point
 #'
-#' @param lastp given last point
+#' @param lastp Given last point
 #' 
 #' @author Diego Monteiro
 #' 

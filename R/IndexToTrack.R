@@ -1,10 +1,12 @@
-#'Conversão de index pra track
+#' Convet index to Track
 #'
-#'@param A1 Track object
+#'@param A1  Represents a single trajectory followed by a person, animal or object
 #' 
 #'@param index An index list
 #'
-#'@return track object
+#'@author Diego Monteiro
+#'
+#'@return Track object
 setGeneric(
   name = "IndexToTrack",
   def = function(A1, index)

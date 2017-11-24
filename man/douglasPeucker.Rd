@@ -16,7 +16,7 @@ douglasPeucker(A1, dist)
 \item{dist}{Distance time series}
 }
 \value{
-reduces trajectories by preserving spatial precisions
+Reduces trajectories by preserving spatial precisions
 }
 \description{
 Douglas-Peucker which reduces trajectories by preserving spatial precisions

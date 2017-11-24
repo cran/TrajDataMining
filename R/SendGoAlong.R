@@ -10,7 +10,7 @@
 #'
 #' @param tablename Name of table 
 #'
-#' @return send the partners list for a database
+#' @return Send the partners list for a database
 #'
 
 setGeneric(
@@ -21,8 +21,6 @@ setGeneric(
     standardGeneric("sendPartnerPairsToDB")
   }
 )
-#' Method that sends found partners to a PostGIS database with object DataSourceInfo
-#'
 #'@rdname sendPartnerPairsToDB
 setMethod(
   f = "sendPartnerPairsToDB",
@@ -60,8 +58,6 @@ value = partnerframe, append = TRUE, row.names = FALSE)
 ##dbDisconnect(con)
   }
 )
-#' Method that sends found partners to a PostGIS database using object PosgreSQLConnection
-#'
 #'@rdname sendPartnerPairsToDB
 
 setMethod(
