@@ -16,13 +16,12 @@ douglasPeucker(A1, dist)
 \item{dist}{Distance time series}
 }
 \value{
-Reduces trajectories by preserving spatial precisions
+reduces trajectories by preserving spatial precisions
 }
 \description{
 Douglas-Peucker which reduces trajectories by preserving spatial precisions
 }
 \examples{
-
 \dontrun{
 library(ggplot2)
 

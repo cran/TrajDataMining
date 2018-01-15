@@ -4,7 +4,7 @@
 #'
 #' @param A3 Track object
 #'
-#' @param clusterlist Numeric list of cluster positions create spatial objects
+#' @param clusterlist list of cluster positions create spatial objects
 #' 
 #' @author Deigo Monteiro
 #
@@ -14,8 +14,8 @@
 #' 
 #' @examples 
 #' 
-#' clusterList <- as.numeric(1:42)
-#' cluster <- createSpatialCluster(A1,clusterList)
+#'spcluster<-createSpatialCluster(A1,speedCluster(A1,mean(A1@connections$speed),
+#' 12,min(A1@connections$speed)+4))
 #'
 #' @export
 # given a Track and a list of cluster positions create spatial objects
@@ -30,7 +30,7 @@ setGeneric(
 #' @rdname  createSpatialCluster
 setMethod(
   f = "createSpatialCluster",
-  signature = c("Track","numeric"),
+  signature = c("Track","list"),
   definition = function(A3, clusterlist)
   {
     firstinteraction = TRUE;

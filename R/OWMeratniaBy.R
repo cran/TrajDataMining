@@ -17,7 +17,6 @@
 #'@author Diego Monteiro
 #'
 #'@examples
-#'
 #'\dontrun{
 #'library(ggplot2)
 #'

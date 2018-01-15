@@ -12,7 +12,7 @@
 
 <meta name="author" content="Diego Monteiro" />
 
-<meta name="date" content="2017-11-24" />
+<meta name="date" content="2018-01-15" />
 
 <title>TrajDataMining</title>
 
@@ -70,13 +70,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">TrajDataMining</h1>
 <h4 class="author"><em>Diego Monteiro</em></h4>
-<h4 class="date"><em>2017-11-24</em></h4>
+<h4 class="date"><em>2018-01-15</em></h4>
 
 
 
 <div id="trajdatamining" class="section level2">
 <h2>TrajDataMining</h2>
-<p>A new method to detect a pattern called Partners in trajectories. This algorithm identifies pairs of trajecories whose objects saty together during certain periods. This method is avaliable in the TrajDataMining package. It differs from existing moving together patterns because its implementation is highly parallelizable and its clustering method is based on distance time series analysis.</p>
+<p>The TrajDataMining contains a set of methods for trajectory data preparation, such as filtering, compressing and clustering, and for trajectory pattern discovery. The meth- ods for data preparation are important to prepare trajectory data sets before the data mining phase. TrajDataMining contains the following methods:</p>
+<ul>
+<li><p>A speed filter that filters out trajectory observations whose speeds are above a user-defined maximum velocity ( ETIENNE , 2011).</p></li>
+<li><p>Two compression algorithms: (1) Douglas-Peucker which reduces trajectories by preserving spatial precisions ( DOUGLAS; PEUCKER , 1973), and (2) Open-window Meratnia-By which reduces trajectories by preserving spatiotempo- ral precisions ( MERATNIA; BY , 2004).</p></li>
+<li><p>Two algorithms to discover when objects stop and move, CB-SMoT ( PALMA et al. , 2008) and DB-SMoT ( ROCHA et al. , 2010), which can be used to semanti- cally enrich the trajectory data.</p></li>
+<li><p>A method, named Partner, that identifies objects that are moving together. We propose this method to recognize trajectories that stay together, based on trajectory distance time series analysis.</p></li>
+</ul>
 </div>
 <div id="example-data-gives" class="section level2">
 <h2>Example data gives</h2>
@@ -98,8 +104,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="douglas-peucker-method" class="section level2">
 <h2>Douglas Peucker Method</h2>
-<div id="douglas-peucker-which-reduces-trajectories-by-preserving-spatial-precisions." class="section level4">
-<h4>Douglas-Peucker which reduces trajectories by preserving spatial precisions.</h4>
+<div id="method-that-reduces-a-trajectory-spatially" class="section level3">
+<h3>Method that reduces a trajectory spatially</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># get the maximum distance</span>
  max &lt;-<span class="st"> </span><span class="kw">max</span>(A1@connections$distance)
 
@@ -112,8 +118,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="speed-filter" class="section level2">
 <h2>Speed Filter</h2>
-<div id="a-speed-filter-that-filters-out-trajectory-observations-whose-speeds-are-above-a-user-defined-maximum-velocity-etienne-2011." class="section level4">
-<h4>A speed filter that filters out trajectory observations whose speeds are above a user-defined maximum velocity ( ETIENNE , 2011).</h4>
+<div id="method-removes-regions-where-speed-was-higher-than-the-defined-parameter" class="section level3">
+<h3>Method removes regions where speed was higher than the defined parameter</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># get the maximum distance</span>
   sf &lt;-<span class="st"> </span><span class="kw">speedFilter</span>(A1,<span class="fl">0.01</span>)</code></pre></div>
 <pre><code>## [1] &quot;2008-01-23 21:32:44&quot;
@@ -136,9 +142,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="partner" class="section level2">
 <h2>Partner</h2>
-<div id="a-method-named-partner-that-identifies-objects-that-are-moving-together.-we-propose-this-method-to-recognize-trajectories-that-stay-together-based-on-trajectory-distance-time-series-analysis." class="section level4">
-<h4>A method, named Partner, that identifies objects that are moving together. We propose this method to recognize trajectories that stay together, based on trajectory distance time series analysis.</h4>
-</div>
+<div id="method-to-identify-if-two-trajectories-are-partners" class="section level3">
+<h3>Method to identify if two trajectories are partners</h3>
 <div id="for-to-send-this-data-for-the-database-use-the-class-datasourceinfo." class="section level4">
 <h4>For to send this data for the database use the class DataSourceInfo.</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  data &lt;-<span class="st"> </span><span class="ot">FALSE</span>
@@ -146,6 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <span class="kw">partner</span>(A1,A2,<span class="dv">110792</span>,<span class="dv">2277</span>,<span class="dv">0</span>,data)</code></pre></div>
 <pre><code>##             begintime             endtime id1 id2
 ## 1 2008-02-04 21:26:54 2008-11-11 06:58:44   1   2</code></pre>
+</div>
 </div>
 </div>
 

@@ -3,17 +3,17 @@
 \docType{methods}
 \name{createSpatialCluster}
 \alias{createSpatialCluster}
-\alias{createSpatialCluster,Track,numeric-method}
+\alias{createSpatialCluster,Track,list-method}
 \title{Create Spatial Cluster}
 \usage{
 createSpatialCluster(A3, clusterlist)
 
-\S4method{createSpatialCluster}{Track,numeric}(A3, clusterlist)
+\S4method{createSpatialCluster}{Track,list}(A3, clusterlist)
 }
 \arguments{
 \item{A3}{Track object}
 
-\item{clusterlist}{Numeric list of cluster positions create spatial objects}
+\item{clusterlist}{list of cluster positions create spatial objects}
 }
 \value{
 cluster of polygons
@@ -23,8 +23,8 @@ Method for create a spatial cluster
 }
 \examples{
 
-clusterList <- as.numeric(1:42)
-cluster <- createSpatialCluster(A1,clusterList)
+spcluster<-createSpatialCluster(A1,speedCluster(A1,mean(A1@connections$speed),
+12,min(A1@connections$speed)+4))
 
 }
 \author{

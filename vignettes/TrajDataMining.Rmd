@@ -11,12 +11,25 @@ vignette: >
 
 ## TrajDataMining
 
-A new method to detect a pattern called Partners in trajectories. This algorithm identifies pairs of trajecories whose objects saty together during certain
-periods. This method is avaliable in the TrajDataMining package. It differs
-from existing moving together patterns because its implementation is highly
-parallelizable and its clustering method is based on distance time series analysis.
+The TrajDataMining contains a set of methods for trajectory data preparation, such as
+filtering, compressing and clustering, and for trajectory pattern discovery. The meth-
+ods for data preparation are important to prepare trajectory data sets before the data
+mining phase. TrajDataMining contains the following methods:
 
+- A speed filter that filters out trajectory observations whose speeds are above
+a user-defined maximum velocity ( ETIENNE , 2011).
 
+- Two compression algorithms: (1) Douglas-Peucker which reduces trajectories
+by preserving spatial precisions ( DOUGLAS; PEUCKER , 1973), and (2) Open-window Meratnia-By which reduces trajectories by preserving spatiotempo-
+ral precisions ( MERATNIA; BY , 2004).
+
+- Two algorithms to discover when objects stop and move, CB-SMoT ( PALMA
+et al. , 2008) and DB-SMoT ( ROCHA et al. , 2010), which can be used to semanti-
+cally enrich the trajectory data.
+
+- A method, named Partner, that identifies objects that are moving together.
+We propose this method to recognize trajectories that stay together, based on
+trajectory distance time series analysis.
 
 ## Example data gives
 ```{r}
@@ -42,7 +55,7 @@ suppressMessages(library(rgdal))
 
 ## Douglas Peucker Method
 
-#### Douglas-Peucker which reduces trajectories by preserving spatial precisions.
+### Method that reduces a trajectory spatially
 
 ```{r, fig.height=4,fig.width=4,fig.align='center'}
 
@@ -59,7 +72,7 @@ suppressMessages(library(rgdal))
 
 ## Speed Filter
 
-#### A speed filter that filters out trajectory observations whose speeds are above a user-defined maximum velocity ( ETIENNE , 2011).
+### Method removes regions where speed was higher than the defined parameter
 
 ```{r, fig.height=4,fig.width=4,fig.align='center'}
 
@@ -72,7 +85,7 @@ suppressMessages(library(rgdal))
 
 ## Partner
 
-#### A method, named Partner, that identifies objects that are moving together. We propose this method to recognize trajectories that stay together, based on trajectory distance time series analysis.
+### Method to identify if two trajectories are partners
 
 #### For to send this data for the database use the class DataSourceInfo.
 ```{r, fig.height=6,fig.width=6,fig.align='center'}

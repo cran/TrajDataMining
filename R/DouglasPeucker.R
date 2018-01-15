@@ -3,10 +3,6 @@
 #' Douglas-Peucker which reduces trajectories by preserving spatial precisions
 #' 
 #'@import geosphere
-#'
-#'@import ggplot2
-#'
-#'@import magrittr
 #' 
 #'@param A1 Represents a single trajectory followed by a person, animal or object
 #'
@@ -14,12 +10,11 @@
 #'
 #'@author Diego Monteiro
 #'
-#'@return Reduces trajectories by preserving spatial precisions
+#'@return reduces trajectories by preserving spatial precisions
 #' 
 #'@rdname douglasPeucker
 #'
 #'@examples 
-#'
 #'\dontrun{
 #'library(ggplot2)
 #'
@@ -43,13 +38,13 @@ setGeneric(
 #'
 #' Method that reduces a trajectory spatially with first point and last point
 #'
-#' @param A1 Represents a single trajectory followed by a person, animal or object
+#' @param A1 track object
 #' 
-#' @param dist Distance time series
+#' @param dist distance
 #'
-#' @param firstp Given first point
+#' @param firstp given first point
 #'
-#' @param lastp Given last point
+#' @param lastp given last point
 #' 
 #' @author Diego Monteiro
 #' 

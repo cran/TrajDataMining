@@ -12,13 +12,13 @@ douglasPeuckerRP(A1, firstp, lastp, dist)
   dist)
 }
 \arguments{
-\item{A1}{Represents a single trajectory followed by a person, animal or object}
+\item{A1}{track object}
 
-\item{firstp}{Given first point}
+\item{firstp}{given first point}
 
-\item{lastp}{Given last point}
+\item{lastp}{given last point}
 
-\item{dist}{Distance time series}
+\item{dist}{distance}
 }
 \description{
 Method that reduces a trajectory spatially with first point and last point

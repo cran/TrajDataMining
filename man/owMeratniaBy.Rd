@@ -24,7 +24,6 @@ Reduces trajectories spatiotemporally
 Method that reduces trajectories spatiotemporally
 }
 \examples{
-
 \dontrun{
 library(ggplot2)
 

@@ -6,13 +6,13 @@
 \title{A trajectory of elephant sea}
 \format{A trajectory  with 2218 rows and 7 columns:
 \describe{
-  \item{id}{Id each point of trajectory}
-   \item{x}{Latitude}
-  \item{y}{Longitude}
-  \item{time}{Time stamps of the track points}
-  \item{endtime}{End time stamps of the track points}
-  \item{timeindex}{Time index}
-  \item{ones}{Ones of the track} 
+  \item{id}{id each point of trajectory}
+   \item{x}{latitude}
+  \item{y}{longitude}]
+  \item{time}{time stamps of the track points}
+  \item{endtime}{end time stamps of the track points}
+  \item{timeindex}{time index}
+  \item{ones}{ones of the track} 
 }}
 \usage{
 A1

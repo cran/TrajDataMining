@@ -2,21 +2,18 @@
 % Please edit documentation in R/IndexToTrack.R
 \name{IndexToTrack}
 \alias{IndexToTrack}
-\title{Convet index to Track}
+\title{Conversão de index pra track}
 \usage{
 IndexToTrack(A1, index)
 }
 \arguments{
-\item{A1}{Represents a single trajectory followed by a person, animal or object}
+\item{A1}{Track object}
 
 \item{index}{An index list}
 }
 \value{
-Track object
+track object
 }
 \description{
-Convet index to Track
-}
-\author{
-Diego Monteiro
+Conversão de index pra track
 }
