@@ -33,6 +33,7 @@ trajectory distance time series analysis.
 
 ## Example data gives
 ```{r}
+
 library(TrajDataMining)
 library(ggplot2)
 library(sp)

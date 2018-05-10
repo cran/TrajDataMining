@@ -1,8 +1,8 @@
 Package: TrajDataMining
 Type: Package
 Title: Trajectories Data Mining
-Version: 0.1.5
-Date: 2018-01-08
+Version: 0.1.6
+Date: 2018-05-08
 Authors@R: c(person("Diego","Monteiro",role=c("aut","cre"),email="dvm1607@gmail.com"),
   person("Karine", "Reis", role = "ctb",email="karine.ferreira@inpe.br"),
   person("Rafael", "Santos", role = "ctb", email="rafael.santos@inpe.br"),
@@ -13,14 +13,15 @@ License: MIT + file LICENSE
 LazyData: TRUE
 Encoding: UTF-8
 Depends: R (>= 3.0.0)
-Imports: sp, trajectories, rgdal, xts, rgeos, ggplot2, spacetime,
-        RPostgreSQL, geosphere, methods, magrittr
-Suggests: testthat, knitr, rmarkdown, covr
+ByteCompile: true
+Imports: sp, trajectories, xts, spacetime, RPostgreSQL, geosphere,
+        methods, rgdal
+Suggests: testthat, knitr, rmarkdown, covr, ggplot2, rgeos, magrittr
 VignetteBuilder: knitr
 URL: https://github.com/INPEtrajectories/TrajDataMining
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2018-01-15 13:23:36 UTC; asainpe
+Packaged: 2018-05-10 19:08:28 UTC; root
 Author: Diego Monteiro [aut, cre],
   Karine Reis [ctb],
   Rafael Santos [ctb],
@@ -28,4 +29,4 @@ Author: Diego Monteiro [aut, cre],
   Felipe Carvalho [ctb]
 Maintainer: Diego Monteiro <dvm1607@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-01-15 13:45:13 UTC
+Date/Publication: 2018-05-10 21:29:42 UTC

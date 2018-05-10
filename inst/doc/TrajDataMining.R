@@ -1,4 +1,5 @@
 ## ------------------------------------------------------------------------
+
 library(TrajDataMining)
 library(ggplot2)
 library(sp)

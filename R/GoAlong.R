@@ -75,8 +75,10 @@ setMethod(
     }
     count = 0
     time  = 0
+    
+    # modified
     if (id1==id2){
-      break;
+      stop()
     }
     
     
